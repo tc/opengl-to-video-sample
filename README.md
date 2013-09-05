@@ -25,6 +25,7 @@ Reqs:
 * libjpeg
 
 ```
+brew install libjpeg
 brew install ffmpeg
 brew tap homebrew/science
 brew install opencv --env=std
