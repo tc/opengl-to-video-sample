@@ -5,7 +5,6 @@ GLuint vertex_shader, fragment_shader, program;
 CvVideoWriter *writer = 0;
 
 int counter = 0;
-
 int image_width = 512;
 int image_height = 512;
 
@@ -208,9 +207,7 @@ static void drawScene(void)
   glutSwapBuffers();
 }
 
-static void screenCapture(){
-  int width = image_width;
-  int height = image_height;
+static void screenCapture(int width, int height){
   unsigned char *raw_image = (unsigned char*) calloc(width * height * 3, sizeof(char));
   glReadPixels(0, 0, width, height, GL_RGB, GL_UNSIGNED_BYTE, raw_image);
 
@@ -221,15 +218,15 @@ static void screenCapture(){
 }
 
 static void replay(){
-  setupDynamicBuffers();
-  drawScene();
-  screenCapture();
-}
-
-static int setupBoard(int argc, char** argv){
   int width = image_width;
   int height = image_height;
 
+  setupDynamicBuffers();
+  drawScene();
+  screenCapture(width, height);
+}
+
+static int setupBoard(int width, int height, int argc, char** argv){
   glutInit(&argc, argv);
   glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
   glutInitWindowSize(width, height);
@@ -263,7 +260,7 @@ int main(int argc, char** argv){
   int width = image_width;
   int height = image_height;
 
-  setupBoard(argc, argv);
+  setupBoard(width, height, argc, argv);
 
   setupScreen(width, height);
 
