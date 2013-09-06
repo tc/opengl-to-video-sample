@@ -24,7 +24,9 @@ Reqs:
 * ffmpeg
 * libjpeg
 
+On Mac OSX:
 ```
+brew install glew
 brew install libjpeg
 brew install ffmpeg
 brew tap homebrew/science
