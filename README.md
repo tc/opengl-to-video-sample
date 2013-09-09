@@ -20,9 +20,10 @@ You may need VLC to view the video.
 
 Reqs:
 * OpenGL
-* OpenCV
+* GLEW
 * ffmpeg
 * libjpeg
+* OpenCV
 
 On Mac OSX:
 ```
