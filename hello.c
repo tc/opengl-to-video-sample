@@ -249,7 +249,7 @@ static int setupVideoWriting(){
 
   // You can change CV_FOURCC('' to CV_FOURCC('X', '2', '6', '4') for x264 output
   // Make sure you compiled ffmpeg with x264 support and OpenCV with x264
-  writer = cvCreateVideoWriter("out.avi", CV_FOURCC('D', 'I', 'V', 'X'), fps, cvSize(width, height), isColor);
+  writer = cvCreateVideoWriter("out.avi", CV_FOURCC('j', 'p', 'e', 'g'), fps, cvSize(width, height), isColor);
 
   return 0;
 }
